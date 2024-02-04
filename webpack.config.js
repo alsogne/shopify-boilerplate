@@ -1,18 +1,18 @@
-const path = require("path");
-const cp = require("child_process");
-const Encore = require("@symfony/webpack-encore");
-const postcssPresetEnv = require("postcss-preset-env");
+const path = require('path');
+const cp = require('child_process');
+const Encore = require('@symfony/webpack-encore');
+const postcssPresetEnv = require('postcss-preset-env');
 
-const src = path.resolve("src");
-const dest = path.resolve("theme/assets");
+const src = path.resolve('src');
+const dest = path.resolve('theme/assets');
 
 Encore
   // sources
-  .addEntry("main", path.join(src, "main.js"))
+  .addEntry('main', path.join(src, 'main.js'))
 
   // destination
   .setOutputPath(dest)
-  .setPublicPath("/")
+  .setPublicPath('/')
 
   // features
   .enableSassLoader()
@@ -25,17 +25,17 @@ Encore
     };
   })
   .configureBabelPresetEnv((config) => {
-    config.useBuiltIns = "usage";
+    config.useBuiltIns = 'usage';
     config.corejs = 3;
   })
   .configureImageRule({
-    filename: "[name].[hash:8][ext]",
+    filename: '[name].[hash:8][ext]',
   })
   .configureFontRule({
-    filename: "[name].[hash:8][ext]",
+    filename: '[name].[hash:8][ext]',
   })
   .cleanupOutputBeforeBuild([], () => {
-    cp.spawnSync("git", ["clean", "-xdf", dest], { stdio: "inherit" });
+    cp.spawnSync('git', ['clean', '-xdf', dest], { stdio: 'inherit' });
   });
 
 module.exports = Encore.getWebpackConfig();
