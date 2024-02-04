@@ -1,0 +1,13 @@
+# assets
+theme/assets/*
+
+# dependencies
+node_modules/
+
+# misc
+.DS_Store
+*.pem
+*.log
+
+# locks
+package-lock.json
