@@ -19,6 +19,7 @@ Encore
   .autoProvidejQuery()
   .disableSingleRuntimeChunk()
   .enableSourceMaps(Encore.isDev())
+  .enableReactPreset()
   .enablePostCssLoader((options) => {
     options.postcssOptions = {
       plugins: [postcssPresetEnv()],
