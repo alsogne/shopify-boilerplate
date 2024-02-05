@@ -1,5 +1,6 @@
 # assets
 theme/assets/*
+!theme/assets/static-*
 
 # dependencies
 node_modules/

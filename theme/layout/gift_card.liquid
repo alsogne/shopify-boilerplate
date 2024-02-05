@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="{{ shop.locale }}">
+<head>
+    <!-- Meta tags for character set, compatibility, and responsive design -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Description for SEO -->
+    <meta name="description" content="{{ shop.metafields.seo.description | escape }}">
+    
+    <!-- Title of your page -->
+    <title>{{ page_title }}</title>
+
+    <!-- Meta tags for SEO -->
+    <meta name="keywords" content="{{ shop.metafields.seo.keywords | escape }}">
+    <meta name="author" content="{{ shop.shop_owner }}">
+    <meta name="robots" content="index, follow">
+
+    <!-- Links to your JavaScript files (if necessary) -->
+    <script src="{{ 'main.js' | asset_url }}" defer></script>
+
+    <!-- Links to your favicon -->
+    <link rel="icon" href="{{ 'static-favicon.png' | asset_url }}" type="image/x-icon">
+
+    <!-- Open Graph tags for social media -->
+    <meta property="og:title" content="{{ page_title }}">
+    <meta property="og:description" content="{{ shop.metafields.seo.og_description | escape }}">
+    <meta property="og:image" content="{{ shop.metafields.seo.og_image | escape }}">
+    <meta property="og:url" content="{{ canonical_url }}">
+
+    <!-- Twitter Card tags for Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ page_title }}">
+    <meta name="twitter:description" content="{{ shop.metafields.seo.twitter_description | escape }}">
+    <meta name="twitter:image" content="{{ shop.metafields.seo.twitter_image | escape }}">
+
+    {{ content_for_header }}
+</head>
+
+<body>
+    <!-- Your HTML content here -->
+    <header>
+        <!-- Your Shopify header here -->
+        <!-- Example: Logo, navigation menu, etc. -->
+    </header>
+
+    <!-- Your main content here -->
+    <main>
+        <!-- Main content of your page -->
+        {{ content_for_layout }}
+    </main>
+
+    <!-- Your footer here -->
+    <footer>
+        <!-- Shopify footer -->
+        <!-- Example: Useful links, contact information, etc. -->
+    </footer>
+</body>
+</html>

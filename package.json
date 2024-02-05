@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "shopify:server": "shopify theme dev --path=./theme",
     "encore:watch": "encore dev --watch",
     "encore:build": "encore production --progress",
     "lint:format": "prettier --check .",
