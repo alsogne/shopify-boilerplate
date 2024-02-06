@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 import { PrimaryButton } from './components/Button';
 
@@ -7,7 +7,5 @@ const handlePrimaryClick = () => {
   alert('Primary button clicked!');
 };
 
-ReactDOM.render(
-  <PrimaryButton label="Click here" className={'btn-primary'} onClick={handlePrimaryClick} />,
-  document.body
-);
+const root = createRoot(document.body);
+root.render(<PrimaryButton label="Click here" className={'btn-primary'} onClick={handlePrimaryClick} />);

@@ -20,6 +20,7 @@ Encore
   .disableSingleRuntimeChunk()
   .enableSourceMaps(Encore.isDev())
   .enableReactPreset()
+  .enableEslintPlugin()
   .enablePostCssLoader((options) => {
     options.postcssOptions = {
       plugins: [postcssPresetEnv()],
